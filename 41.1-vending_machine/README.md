@@ -1,7 +1,9 @@
 # Vending Machine
+
 ![Preview](src/vendingMachine.gif)
-- Used Routes, Nav, and Switch to create a Vending Machine App
-- Clicking an item from the vending machine will not refresh the page while rendering the correct component. 
+
+- Used Routes, Switch, NavLink to build a vending machine that renders components based on item that was clicked.
+- Page does not refresh when a new path is routed.
 
 ## Available Scripts
 
@@ -19,3 +21,9 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run install`
+
+Download dependencies associated with this app. Requires additional installation of react-router-dom.
+
+- Install with  `npm install react-router-dom` 
