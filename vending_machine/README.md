@@ -1,5 +1,5 @@
 # Vending Machine
-![Preview](src/VendingMachine.gif)
+![Preview](./src/VendingMachine.gif)
 
 - Used Routes, Nav, and Switch to create a Vending Machine App
 - Clicking an item from the vending machine will not refresh the page while rendering the correct component. 
