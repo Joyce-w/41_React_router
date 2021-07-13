@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "react-router-dom"
 
 const DogDetail = ({ dog }) => {
 
@@ -21,6 +21,7 @@ const DogDetail = ({ dog }) => {
 
                 </ul>
             </div>
+        <Link to="/dogs>"><button>Go back to homepage</button></Link>
         </>
     )
 }

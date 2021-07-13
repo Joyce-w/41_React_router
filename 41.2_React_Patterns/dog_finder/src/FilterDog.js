@@ -19,7 +19,6 @@ const FilterDog = ({ dogs }) => {
         //redirect to /dogs if no match
         return <Redirect to="/dogs"/>;      
     }
-
 }
 
 export default FilterDog;
