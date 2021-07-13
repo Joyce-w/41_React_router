@@ -3,13 +3,10 @@ import { Redirect, Route, useHistory } from "react-router-dom";
 import AllColors from "./AllColors";
 import useHandleColor from "./useHandleColors";
 
-const ColorForm = () => {
+const ColorForm = ({handleNewColor}) => {
     
-    //setup hook to handle color change
-    const [color, addColor] = useHandleColor()
-    console.log(color)
-    const [formData, setFormData] = useState("#000000");
-    console.log(formData)
+    //state to store changes from color picker
+    const [formData, setFormData] = useState("#000000");    
 
     //save update color pick after each change
     const handleChange = (e) => {
@@ -21,7 +18,7 @@ const ColorForm = () => {
     //pass color up to parent
     const handleSubmit = (e) => {
         e.preventDefault();
-        addColor(formData);
+        handleNewColor(formData);
         history.push("/colors")
 
     }

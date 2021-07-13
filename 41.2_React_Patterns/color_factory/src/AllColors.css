@@ -1,0 +1,19 @@
+.AllColor-h1{
+    padding-top: 1.5em;
+    height: 3em;
+    background-color: skyblue;
+}
+
+.AllColor-squares {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.AllColor-colorOptions{
+    
+    height:50px;
+    width: 50px;
+    border: rgba(0, 0, 0, 0.075) solid 1px;
+    margin: 1px;
+}
