@@ -4,25 +4,30 @@ import { Link, useLocation} from "react-router-dom"
 const AllColors = props => {
     
 
-    const [color, setColor] = useState([''])
-
-    // const location = useLocation();
-    // let newColor = location.state.color;
-
-
-    //try local storage
+    const [color, setColor] = useState(['#bf4545'])
     
-    // useEffect(() => {
-    //     const addNewColor = (formColor) => {
-            
-    //         console.log(localStorage)
-    //         //access location in props to find any color passed from form
-    //         setColor(color => [...color, formColor])
-    //         console.log
-    //         localStorage.setItem('list', color)
-    //     }
-    //     addNewColor(newColor)
-    // },[newColor])
+
+    //use useLocation() to retrieve the color that was passed through the form 
+    const location = useLocation();
+    let newColor = location.state.color;
+
+
+    //update setColor with the newColor, store in local storage 
+    useEffect(() => {
+        const addColor = (newColorFromForm) => {
+
+            let list = JSON.parse(localStorage.getItem('colorList'))
+            console.log(list)
+            console.log(color)
+            //update color state with list from local storage 
+            setColor((list) => [...list, newColorFromForm])
+
+            localStorage.setItem('colorList', JSON.stringify(color));
+
+        }
+        addColor(newColor);
+
+    },[newColor])
 
 
     return (
