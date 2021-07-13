@@ -1,7 +1,4 @@
-import React, {useState, useEffect, useRef} from "react"
-import { Link, useLocation} from "react-router-dom"
-import ColorForm from "./ColorForm"
-import useHandleColor from "./useHandleColors";
+import { Link} from "react-router-dom"
 import "./AllColors.css";
 
 

@@ -5,6 +5,9 @@
 }
 
 .AllColor-squares {
+    width: 60%;
+    margin:0 20%;
+    justify-content: center;
     margin-top: 1em;
     display: flex;
     justify-content: center;

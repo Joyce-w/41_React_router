@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import { Redirect, Route, useHistory } from "react-router-dom";
-import AllColors from "./AllColors";
-import useHandleColor from "./useHandleColors";
+import { useHistory } from "react-router-dom";
+import "./ColorForm.css"
 
 const ColorForm = ({handleNewColor}) => {
     
@@ -18,14 +17,16 @@ const ColorForm = ({handleNewColor}) => {
     //pass color up to parent
     const handleSubmit = (e) => {
         e.preventDefault();
+        //pass form data up to Routes component
         handleNewColor(formData);
+        //redirect to /colors
         history.push("/colors")
 
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1>Add Color!</h1>
+            <h1 className="ColorForm-h1">Add Color!</h1>
             <label htmlFor="color">Color </label>
             <input
                 type="color"
