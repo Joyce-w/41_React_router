@@ -1,40 +1,46 @@
 import React, {useState, useEffect, useRef} from "react"
 import { Link, useLocation} from "react-router-dom"
+import ColorForm from "./ColorForm"
+import useHandleColor from "./useHandleColors";
 
-const AllColors = props => {
+
+const AllColors = () => {
     
-
-    const [color, setColor] = useState(['#bf4545'])
+    const [color, addColor] = useHandleColor()
+    console.log(color)
+    // console.log(color)
+    // //get any colors in local storage or use an empty array if none
+    // let initialColors = JSON.parse(localStorage.getItem('colorList')) || [];
+    // const [color, setColor] = useState(initialColors)
     
 
     //use useLocation() to retrieve the color that was passed through the form 
-    const location = useLocation();
-    let newColor = location.state.color;
+    // const location = useLocation();
+    // let newColor = location.state.color;
 
 
-    //update setColor with the newColor, store in local storage 
-    useEffect(() => {
-        const addColor = (newColorFromForm) => {
+    // //update setColor with the newColor
+    // useEffect(() => {
+    //     const addColor = (newColorFromForm) => {
 
-            let list = JSON.parse(localStorage.getItem('colorList'))
-            console.log(list)
-            console.log(color)
-            //update color state with list from local storage 
-            setColor((list) => [...list, newColorFromForm])
+    //         setColor((list) => [...list, newColorFromForm])
 
-            localStorage.setItem('colorList', JSON.stringify(color));
+    //         localStorage.setItem('colorList', JSON.stringify(color));
 
-        }
-        addColor(newColor);
+    //     }
+    //     addColor(newColor);
 
-    },[newColor])
+    // }, [newColor])
+    
+    // // update localstorage to be the new state
+    // useEffect()
 
 
     return (
         <div>
             <h1>Color Factory</h1>
             <Link to="/colors/new">Add a Color </Link>
-
+            
         </div>
 
     )
