@@ -9,7 +9,7 @@ const Color = () => {
     
     return (
         <div className="Route" style={{backgroundColor: colorHex}}>
-            <p className="Route-p">Do you like this color?</p>
+            <p className="Route-p">Nice Color!</p>
             <Link to="/colors"><button className="Route-btn">Back to color list</button></Link>
         </div>
     )

@@ -5,11 +5,12 @@
 }
 
 .AllColor-squares {
-    width: 60%;
-    margin:0 20%;
+    width: 50%; 
+    margin:0 25%;
     justify-content: center;
     margin-top: 1em;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
