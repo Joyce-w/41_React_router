@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react"
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route, Redirect} from "react-router-dom"
 import AllColors from "./AllColors"
-import ColorCheck from "./ColorCheck"
 import ColorForm from "./ColorForm"
-import useHandleColor from "./useHandleColors";
+import Color from "./Color"
 
 const Routes = () => {
     
@@ -14,17 +13,25 @@ const Routes = () => {
     const handleNewColor = (newColor) => {
         setColor((color)=>[...color, newColor])
     }
+    console.log(color)
     
     useEffect(() => {
         localStorage.setItem('colorList', JSON.stringify(color));
     }, [color])
- 
+
+    function renderCurrentColor(props) {
+        const { param } = props.match.params;
+        const hex = color[param];
+        
+        return <Color color={hex}></Color>
+    }
 
     return (
         
         <Switch>
-            <Route exact path="/colors"><AllColors colors={color}/></Route>
+            <Route exact path="/colors"><AllColors colors={color} /></Route>.
             <Route exact path="/colors/new"><ColorForm handleNewColor={handleNewColor}/></Route>
+            <Route exact path="/colors/:color" render={ renderCurrentColor }></Route>
             <Redirect to="/colors"/>
         </Switch>        
     );
@@ -34,3 +41,4 @@ const Routes = () => {
 
 
 export default Routes;
+

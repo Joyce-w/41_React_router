@@ -4,12 +4,6 @@ import "./AllColors.css";
 
 const AllColors = ({ colors}) => {
 
-    const divStyle = {
-        width: '50px',
-        height: '50px'
-
-    }
-
     return (
         <div>
             <h1 className="AllColor-h1">Color Factory</h1>
@@ -17,12 +11,14 @@ const AllColors = ({ colors}) => {
             
             <div className="AllColor-squares">
                 {colors.map(el => {
-                    return <div className="AllColor-colorOptions"key={el} style={{  backgroundColor: el }}></div>
+                    let hex = el.slice(1)
+                    return <Link to={`/colors/${hex}`}>
+                        <div className="AllColor-colorOptions" key={el} style={{ backgroundColor: el }}></div>
+                            </Link>
                 })
-                }
+                }                
             </div>
         </div>
-
     )
 }
 

@@ -1,0 +1,17 @@
+.Route{
+     margin: 0;
+     height:100vh
+}
+
+.Route-p{
+     font-size: 180px; 
+     margin: 0
+}
+
+.Route-btn{
+    background-color: rgba(255, 242, 242, 0.027);
+    border: 1px solid rgba(0, 0, 0, 0.247);
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: large;
+}
